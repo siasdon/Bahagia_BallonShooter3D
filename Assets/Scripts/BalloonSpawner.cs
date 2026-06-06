@@ -1,29 +1,28 @@
-/*using UnityEngine;
+using UnityEngine;
 
 public class BalloonSpawner : MonoBehaviour
 {
     public GameObject balloonPrefab;
+    public Transform player;
 
-    public int totalBalloons = 30;
-
-    public Vector3 areaSize = new Vector3(50, 15, 50);
+    public float spawnRadius = 20f;
+    public int totalBalloons = 5;
 
     void Start()
     {
-        for (int i = 0; i < totalBalloons; i++)
-        {
-            SpawnBalloon();
-        }
+        InvokeRepeating(
+            "SpawnBalloon",
+            1f,
+            2f);
     }
 
     public void SpawnBalloon()
     {
-        Vector3 randomPos =
-            new Vector3(
-                Random.Range(-areaSize.x, areaSize.x),
-                Random.Range(-10f, 5f),
-                Random.Range(10f, areaSize.z)
-            );
+            Vector3 randomPos =
+            player.position +
+            player.forward * Random.Range(10f, 30f) +
+            player.right * Random.Range(-15f, 15f) +
+            Vector3.up * Random.Range(-3f, 3f);
 
         Instantiate(
             balloonPrefab,
@@ -31,4 +30,4 @@ public class BalloonSpawner : MonoBehaviour
             Quaternion.identity
         );
     }
-}*/
+}
