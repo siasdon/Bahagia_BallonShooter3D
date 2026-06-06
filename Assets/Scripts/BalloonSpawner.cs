@@ -5,8 +5,8 @@ public class BalloonSpawner : MonoBehaviour
     public GameObject balloonPrefab;
     public Transform player;
 
-    public float spawnRadius = 20f;
-    public int totalBalloons = 5;
+    public float spawnRadius = 30f;
+    public int totalBalloons = 15;
 
     void Start()
     {
