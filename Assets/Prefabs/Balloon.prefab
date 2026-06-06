@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 147623506231740784}
   - component: {fileID: 6948001312598813911}
   - component: {fileID: 6430558893167449632}
+  - component: {fileID: 5407208611645842441}
   m_Layer: 0
   m_Name: Balloon
-  m_TagString: Untagged
+  m_TagString: Balloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,6 +142,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5407208611645842441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68964213276648793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e259c16c6b613884f9e40fe4b14438d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BalloonSpawner
+  balloonPrefab: {fileID: 68964213276648793}
+  player: {fileID: 0}
+  balloonsPerSpawn: 10
+  spawnInterval: 0.5
+  maxBalloons: 100
+  speed: 0
 --- !u!1001 &6252288917063853670
 PrefabInstance:
   m_ObjectHideFlags: 0

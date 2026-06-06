@@ -2,32 +2,34 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;
-    public float lifeTime = 5f;
+    public float speed = 80f;
 
-    void Start()
+    private Transform target;
+
+    public void SetTarget(Transform targetTransform)
     {
-        Destroy(gameObject, lifeTime);
+        target = targetTransform;
     }
 
     void Update()
     {
-        transform.Translate(
-            Vector3.forward *
-            speed *
-            Time.deltaTime
-        );
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Balloon"))
+        if (target == null)
         {
-            ScoreManager.instance.AddScore(10);
+            Destroy(gameObject);
+            return;
+        }
 
-            Destroy(other.gameObject);
+        Vector3 direction =
+            (target.position - transform.position).normalized;
 
+        transform.position +=
+            direction * speed * Time.deltaTime;
+
+        transform.forward = direction;
+
+        if (Vector3.Distance(transform.position, target.position) < 0.5f)
+        {
+            Destroy(target.gameObject);
             Destroy(gameObject);
         }
     }
