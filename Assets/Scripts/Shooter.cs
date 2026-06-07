@@ -5,14 +5,16 @@ public class Shooter : MonoBehaviour
 {
     //variabel untuk kamera dan jarak tembak
     public Camera cam;
+    //variabel untuk jarak tembak
     public float range = 100f;
 
     
     void Update()
     {
-        //cek input mouse kiri untuk menembak
+        //cek jika tombol mouse kiri ditekan
         if (Input.GetMouseButtonDown(0))
         {
+            //panggil fungsi Shoot() untuk melakukan tembakan
             Shoot();
         }
     }
@@ -34,7 +36,7 @@ public class Shooter : MonoBehaviour
             //jika ada, panggil fungsi Pop() pada objek tersebut
             if (balloon != null)
             {
-                balloon.Pop();
+                balloon.Pop();//memanggil fungsi Pop() pada objek balloon yang terkena tembakan
             }
         }
     }

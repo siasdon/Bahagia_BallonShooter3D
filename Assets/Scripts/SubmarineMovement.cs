@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class SubmarineMovement : MonoBehaviour
 {
+    // Kecepatan pergerakan kapal selam
     public float speed = 5f;
+    // Komponen Rigidbody untuk mengontrol fisika kapal selam
     Rigidbody rb;
 
     void Start()
     {
+        // Mendapatkan komponen Rigidbody pada objek ini
         rb = GetComponent<Rigidbody>();
     }
 
