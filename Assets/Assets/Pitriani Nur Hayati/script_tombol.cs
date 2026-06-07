@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-
-public class MainMenu : MonoBehaviour
+public class script_tombol : MonoBehaviour
 {
+
     public GameObject menupanel;
     public GameObject infopanel;
 
@@ -16,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     void Update()
     {
-        
+
     }
     public void StartButton(string scenename)
     {

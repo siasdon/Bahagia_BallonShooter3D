@@ -616,9 +616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7699a9a213e9a9e4a800dcaf96433c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pindahScene
-  MenuHome: {fileID: 0}
-  PlayNext: {fileID: 0}
-  Retry: {fileID: 0}
 --- !u!1 &510137649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,12 +1232,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077691591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7699a9a213e9a9e4a800dcaf96433c62, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ffc35e963ac68e4f8e5713537dc8043, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::pindahScene
-  MenuHome: {fileID: 1140495045}
-  PlayNext: {fileID: 1671805296}
-  Retry: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::tes_buton
 --- !u!1 &1140495045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1319,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1077691594}
-        m_TargetAssemblyTypeName: pindahScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: tes_buton, Assembly-CSharp
         m_MethodName: Menu
         m_Mode: 5
         m_Arguments:
@@ -1981,8 +1975,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1077691594}
-        m_TargetAssemblyTypeName: pindahScene, Assembly-CSharp
-        m_MethodName: play
+        m_TargetAssemblyTypeName: tes_buton, Assembly-CSharp
+        m_MethodName: nextLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2422,6 +2416,7 @@ GameObject:
   - component: {fileID: 2084410848}
   - component: {fileID: 2084410847}
   - component: {fileID: 2084410846}
+  - component: {fileID: 2084410849}
   m_Layer: 5
   m_Name: btn_exit
   m_TagString: Untagged
@@ -2494,7 +2489,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1077691594}
-        m_TargetAssemblyTypeName: pindahScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: tes_buton, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -2543,6 +2538,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084410844}
   m_CullTransparentMesh: 1
+--- !u!114 &2084410849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084410844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7699a9a213e9a9e4a800dcaf96433c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pindahScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
