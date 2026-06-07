@@ -466,8 +466,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallonSpawner
   balloonPrefab: {fileID: 807135301}
   player: {fileID: 629394491}
-  spawnRadius: 20
-  totalBalloons: 5
+  balloonsPerSpawn: 7
+  spawnInterval: 0.5
+  maxBalloons: 70
+  speed: 0
 --- !u!4 &508611125
 Transform:
   m_ObjectHideFlags: 0
@@ -1686,7 +1688,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5602caf92e2f7e449aa04643d4ef3646, type: 2}
+  - {fileID: 2100000, guid: 54cb068a56346844793e373c576f2222, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1976,13 +1978,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877970665}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -14.8}
-  m_LocalScale: {x: 4.8514, y: 10.9275, z: 3.2504}
+  m_LocalRotation: {x: -0, y: 0.0012354665, z: -0, w: 0.9999992}
+  m_LocalPosition: {x: 0.6, y: 0, z: 1.2}
+  m_LocalScale: {x: 5.694573, y: 10.9275, z: 3.2504}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.142, z: 0}
 --- !u!1 &1994731366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f0558160572e8fd4397ab177fd7ff306, type: 3}
