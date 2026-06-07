@@ -1,24 +1,29 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class GameTimer : MonoBehaviour
 {
     // Durasi permainan dalam detik
-    public float gameTime = 60f;
+    public float gameTime = 20f;
 
     // Referensi ke UI Text untuk menampilkan timer`
     public TMP_Text timerText;
     // Referensi ke UI Text untuk menampilkan "Game Over"
-    public GameObject gameOverText;
+    //public GameObject gameOverText;
 
     // Variabel untuk menandai apakah permainan sudah berakhir
     private bool gameEnded = false;
 
+    // Skor target untuk memenangkan permainan
+    public int targetScore = 50;
+
     void Start()
     {
+        gameTime = 20f;
         // game over text disembunyikan saat permainan dimulai
-        gameOverText.SetActive(false);
+        //gameOverText.SetActive(false);
     }
 
     void Update()
@@ -49,6 +54,13 @@ public class GameTimer : MonoBehaviour
             minutes,
             seconds);
 
+        // CEK MENANG
+        if (ScoreManager.instance.GetScore() >= targetScore)
+        {
+            Victory();
+            return;
+        }
+
         // Jika waktu habis, akhiri permainan
         if (gameTime <= 0)
         {
@@ -57,12 +69,40 @@ public class GameTimer : MonoBehaviour
     }
 
     // Fungsi untuk mengakhiri permainan
-    void EndGame()
+    /*void EndGame()
     {
         gameEnded = true;
 
         gameOverText.SetActive(true);
 
         Time.timeScale = 0f;
+    }*/
+
+    void EndGame()
+    {
+        gameEnded = true;
+        PlayerPrefs.SetInt(
+            "FinalScore",
+            ScoreManager.instance.GetScore()
+        );
+
+        SceneManager.LoadScene("scene_zonk");
+    }
+
+    void Victory()
+    {
+        gameEnded = true;
+
+        PlayerPrefs.SetInt(
+            "FinalScore",
+            ScoreManager.instance.GetScore()
+        );
+
+        PlayerPrefs.SetFloat(
+           "TimeUsed",
+            20f - gameTime
+        );                                                                                                                                                          
+
+        SceneManager.LoadScene("scene_victory");
     }
 }

@@ -40,4 +40,11 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Score : " + score);
         scoreText.text = "Score : " + score;// Perbarui teks skor di UI
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+
 }

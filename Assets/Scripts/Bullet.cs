@@ -49,7 +49,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // Kecepatan peluru
-    public float speed = 100f;
+    public float speed = 1000f;
     // Target yang akan ditembak
     private Transform target;
     // Efek ledakan saat peluru mengenai target

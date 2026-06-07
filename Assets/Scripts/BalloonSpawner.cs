@@ -69,7 +69,7 @@ public class BalloonSpawner : MonoBehaviour
     [Header("Spawn Settings")]
     public int balloonsPerSpawn = 10;// Jumlah balon yang di-spawn setiap interval
     public float spawnInterval = 0.3f;// Interval waktu antara spawn balon dalam detik
-    public int maxBalloons = 150;
+    public int maxBalloons = 30;
 
     private Vector3 moveDir;// Arah gerakan spawner
     public float speed;// Kecepatan gerakan spawner
