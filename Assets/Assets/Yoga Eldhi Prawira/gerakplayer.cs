@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class gerakplayer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,11 +11,6 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void Awake()
-    {
-
+        
     }
 }

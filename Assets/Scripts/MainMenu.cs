@@ -57,4 +57,9 @@ public class MainMenu : MonoBehaviour
         // Tidak akan muncul pada game yang sudah di-build
         Debug.Log("Tombol Keluar Telah Ditekan!....");
     }
+
+    public void BackHome(string scenename)
+    {
+        SceneManager.LoadScene(scenename);
+    }
 }

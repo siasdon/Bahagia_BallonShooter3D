@@ -154,3 +154,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 30
+  popEffect: {fileID: 6309996473530190773, guid: b62337c0c16c1344e9d935823b29ab1e, type: 3}
+  popSound: {fileID: 8300000, guid: 5e437cd053f1aa342b31f300daa7f182, type: 3}

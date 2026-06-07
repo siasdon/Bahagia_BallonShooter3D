@@ -52,6 +52,11 @@ public class Bullet : MonoBehaviour
     public float speed = 100f;
     // Target yang akan ditembak
     private Transform target;
+    // Efek ledakan saat peluru mengenai target
+    public GameObject popEffect;
+
+    // Suara ledakan saat peluru mengenai target
+    public AudioClip popSound;
 
     public void SetTarget(Transform targetTransform)
     {
@@ -94,6 +99,22 @@ public class Bullet : MonoBehaviour
                 Debug.LogError("ScoreManager tidak ditemukan!");
             }
             // Hancurkan target dan peluru
+            /*Destroy(target.gameObject);
+            Destroy(gameObject);*/
+
+            // Mainkan suara ledakan saat peluru mengenai target
+            AudioSource.PlayClipAtPoint(
+                popSound,
+                target.position
+            );
+
+            // Tampilkan efek ledakan saat peluru mengenai target
+            Instantiate(
+                popEffect,
+                target.position,
+                Quaternion.identity
+            );
+
             Destroy(target.gameObject);
             Destroy(gameObject);
         }

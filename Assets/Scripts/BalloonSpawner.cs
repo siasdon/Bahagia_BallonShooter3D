@@ -67,9 +67,9 @@ public class BalloonSpawner : MonoBehaviour
 
     // Pengaturan spawn balon
     [Header("Spawn Settings")]
-    public int balloonsPerSpawn = 7;// Jumlah balon yang di-spawn setiap interval
-    public float spawnInterval = 0.5f;// Interval waktu antara spawn balon dalam detik
-    public int maxBalloons = 70;
+    public int balloonsPerSpawn = 10;// Jumlah balon yang di-spawn setiap interval
+    public float spawnInterval = 0.3f;// Interval waktu antara spawn balon dalam detik
+    public int maxBalloons = 150;
 
     private Vector3 moveDir;// Arah gerakan spawner
     public float speed;// Kecepatan gerakan spawner
@@ -120,14 +120,14 @@ public class BalloonSpawner : MonoBehaviour
         if (balloons.Length >= maxBalloons)
             return;
 
-        // Spawn balon sebanyak balloonsPerSpawn dengan posisi acak di sekitar pemain
+        /*// Spawn balon sebanyak balloonsPerSpawn dengan posisi acak di sekitar pemain
         for (int i = 0; i < balloonsPerSpawn; i++)
         {
-            /* Vector3 randomPos = player.position +
+            *//* Vector3 randomPos = player.position +
                                  new Vector3(
                                      Random.Range(-50f, 50f),  // kiri-kanan
                                      Random.Range(-15f, 20f),  // atas-bawah
-                                     Random.Range(10f, 80f));  // depan*/
+                                     Random.Range(10f, 80f));  // depan*//*
 
             // Hitung posisi acak di sekitar pemain dengan mempertimbangkan arah hadap pemain
             Vector3 randomPos = player.position +
@@ -141,6 +141,46 @@ public class BalloonSpawner : MonoBehaviour
                 randomPos,
                 Random.rotation
             );
+        }*/
+
+        // Spawn balon sebanyak balloonsPerSpawn dengan posisi acak di sekitar pemain
+        for (int i = 0; i < balloonsPerSpawn; i++)
+        {
+            Vector3 spawnPos = player.position;
+
+            int side = Random.Range(0, 3);
+
+            switch (side)
+            {
+                // Kiri
+                case 0:
+                    spawnPos += new Vector3(
+                        -50f,
+                        Random.Range(-5f, 15f),
+                        Random.Range(15f, 50f));
+                    break;
+
+                // Kanan
+                case 1:
+                    spawnPos += new Vector3(
+                        50f,
+                        Random.Range(-5f, 15f),
+                        Random.Range(15f, 50f));
+                    break;
+
+                // Atas
+                case 2:
+                    spawnPos += new Vector3(
+                        Random.Range(-40f, 40f),
+                        25f,
+                        Random.Range(15f, 50f));
+                    break;
+            }
+
+            Instantiate(
+                balloonPrefab,
+                spawnPos,
+                Quaternion.identity);
         }
     }
 }
