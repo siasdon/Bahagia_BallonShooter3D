@@ -34,9 +34,9 @@ public class pindahScene : MonoBehaviour
     }
 
     // memanggil scene Main Menu
-    public void Menu(string MainMenu)
+    public void Menu(string MainMenu1)
     {
-        SceneManager.LoadScene(MainMenu);
+        SceneManager.LoadScene(MainMenu1);
     }
 
     // Tombol Main Menu
