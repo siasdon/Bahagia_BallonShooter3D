@@ -6,7 +6,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class GameTimer : MonoBehaviour
 {
     // Durasi permainan dalam detik
-    public float gameTime = 20f;
+    public float gameTime = 30f;
 
     // Referensi ke UI Text untuk menampilkan timer`
     public TMP_Text timerText;
@@ -21,7 +21,7 @@ public class GameTimer : MonoBehaviour
 
     void Start()
     {
-        gameTime = 20f;
+        gameTime = 30f;
         // game over text disembunyikan saat permainan dimulai
         //gameOverText.SetActive(false);
     }
