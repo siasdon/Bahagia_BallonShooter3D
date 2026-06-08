@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     // Fungsi untuk memulai permainan
     // Parameter scenename diisi dengan nama scene tujuan
     public void StartButton(string scenename)
-    {   
+    {
         // Berpindah ke scene yang dipilih
         SceneManager.LoadScene(scenename);      
     }
